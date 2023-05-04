@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* grid는 flex보다 나중에 나왔음
+flex는 한방향 배치를 구현
+grid는 두방향 배치를 구현 
+두개를 다 안다면 알맞은 곳에 사용할 수 있음
+전체 구성은 grid로 하고 부분구성은 flex로 하는 경우가 많음*/
+
+.container{
+    border: 2px solid #000;
+    background-color: #ACB1D6;
+    padding: 10px;
+}
+
+.item{
+    border: 2px solid #000;
+    background-color: #FFEAD2;
+    padding: 10px;
+}
+
+/* grid-auto-flow */
+/* 자동배치 알고리즘
+아이템이 자동 배치되는 흐름을 결정하는 속성입니다 */
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25%, auto));
+}
+
+.item:nth-child(2){
+    grid-column: auto/ span 3;
+}
+.item:nth-child(6){
+    grid-column: auto/ span 2;
+}
+.item:nth-child(12){
+    grid-column: auto/ span 3;
+}
+.item:nth-child(15){
+    grid-column: auto/ span 4;
+}
+.item:nth-child(19){
+    grid-column: auto/ span 2;
+}
